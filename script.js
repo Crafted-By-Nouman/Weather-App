@@ -2,7 +2,7 @@
 const API_KEY = "4a95e70c9a696cdca8355375ea62cdd3"; // Replace with your actual API key
 const BASE_URL = "https://api.openweathermap.org/data/2.5";
 const GEO_URL = "https://api.openweathermap.org/geo/1.0/direct";
-const AIR_QUALITY_URL = "http://api.openweathermap.org/data/2.5/air_pollution";
+const AIR_QUALITY_URL = "https://api.openweathermap.org/data/2.5/air_pollution";
 
 // DOM Elements
 const searchInput = document.querySelector(".search-input");
