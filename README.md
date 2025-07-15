@@ -4,7 +4,7 @@
 
 ## 🚀 Live Demo
 
-👉 [Click Here to View Live](https://crafted-by-nouman.github.io/Weather-App/)
+👉 [Click Here to View Live](https://climatrix-live.netlify.app/)
 
 --- 
 
