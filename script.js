@@ -64,12 +64,12 @@ function init() {
       (error) => {
         console.error("Geolocation error:", error);
         // Default to a popular city if geolocation fails
-        fetchWeatherByCity("London");
+        fetchWeatherByCity("Jhang");
       }
     );
   } else {
     // Default to a popular city if geolocation is not supported
-    fetchWeatherByCity("London");
+    fetchWeatherByCity("Jhang");
   }
 
   // Event Listeners
