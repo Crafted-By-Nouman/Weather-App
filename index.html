@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Next-gen weather forecasting with real-time updates, 7-day forecasts, and air quality data" />
+    <title>Climatrix | Forecast the Future, Live the Moment</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌤</text></svg>" />
+  </head>
+  <body>
+    <!-- Preloader -->
+    <div class="preloader">
+      <div class="preloader-inner">
+        <div class="preloader-icon">
+          <div class="weather-icon">
+            <div class="sun"></div>
+            <div class="cloud"></div>
+          </div>
+        </div>
+        <div class="loading-text">Forecast the Future, Live the Moment</div>
+        <div class="progress-bar">
+          <div class="progress"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+      <!-- Navbar -->
+      <nav class="navbar">
+        <div class="navbar-brand">
+          <span class="logo-icon">🌤</span>
+          <span class="logo-text">Climatrix</span>
+        </div>
+        <div class="navbar-actions">
+          <button class="btn theme-toggle" aria-label="Toggle dark mode">
+            <i class="fas fa-moon"></i>
+            <i class="fas fa-sun"></i>
+          </button>
+        </div>
+      </nav>
+
+      <!-- Main Content -->
+      <main class="main-content">
+        <!-- Search Section -->
+        <section class="search-section">
+          <div class="search-container">
+            <div class="search-box">
+              <input
+                type="text"
+                class="search-input"
+                placeholder="Search city or location..."
+                aria-label="Search city" />
+              <button class="search-btn" aria-label="Search">
+                <i class="fas fa-search"></i>
+              </button>
+              <div class="search-history-dropdown">
+                <div class="history-header">
+                  <span>Recent Searches</span>
+                  <button class="clear-history">Clear</button>
+                </div>
+                <ul class="history-list"></ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Current Weather Section -->
+        <section class="current-weather">
+          <div class="weather-card main-card">
+            <div class="weather-location">
+              <h1 class="city-name">--</h1>
+              <div class="location-info">
+                <span class="date">--</span>
+                <span class="time">--</span>
+              </div>
+            </div>
+            <div class="weather-main">
+              <div class="weather-icon-container">
+                <div class="weather-icon" data-icon="01d"></div>
+                <div class="weather-description">--</div>
+              </div>
+              <div class="weather-temp">
+                <span class="temp-value">--</span>
+                <span class="temp-unit">
+                  <button class="unit-btn active" data-unit="c">°C</button> |
+                  <button class="unit-btn" data-unit="f">°F</button>
+                </span>
+                <div class="feels-like">Feels like: <span>--</span></div>
+              </div>
+            </div>
+            <div class="weather-details">
+              <div class="detail-item">
+                <i class="fas fa-wind"></i>
+                <span class="detail-value wind-speed">--</span>
+                <span class="detail-label">Wind</span>
+              </div>
+              <div class="detail-item">
+                <i class="fas fa-tint"></i>
+                <span class="detail-value humidity">--</span>
+                <span class="detail-label">Humidity</span>
+              </div>
+              <div class="detail-item">
+                <i class="fas fa-compress-alt"></i>
+                <span class="detail-value pressure">--</span>
+                <span class="detail-label">Pressure</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Hourly Forecast Section -->
+        <section class="hourly-forecast">
+          <h2 class="section-title">24-Hour Forecast</h2>
+          <div class="hourly-container">
+            <button class="scroll-btn left" aria-label="Scroll left">
+              <i class="fas fa-chevron-left"></i>
+            </button>
+            <div class="hourly-scroll">
+              <div class="hourly-list"></div>
+            </div>
+            <button class="scroll-btn right" aria-label="Scroll right">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>
+        </section>
+
+        <!-- Additional Weather Data Section -->
+        <section class="additional-data">
+          <div class="data-grid">
+            <!-- UV Index Card -->
+            <div class="data-card uv-card">
+              <div class="card-header">
+                <i class="fas fa-sun"></i>
+                <h3>UV Index</h3>
+              </div>
+              <div class="card-content">
+                <div class="uv-value">--</div>
+                <div class="uv-scale">
+                  <div class="uv-level" data-level="1"></div>
+                  <div class="uv-level" data-level="2"></div>
+                  <div class="uv-level" data-level="3"></div>
+                  <div class="uv-level" data-level="4"></div>
+                  <div class="uv-level" data-level="5"></div>
+                </div>
+                <div class="uv-description">--</div>
+              </div>
+            </div>
+
+            <!-- Air Quality Card -->
+            <div class="data-card aqi-card">
+              <div class="card-header">
+                <i class="fas fa-smog"></i>
+                <h3>Air Quality</h3>
+              </div>
+              <div class="card-content">
+                <div class="aqi-value">--</div>
+                <div class="aqi-description">--</div>
+                <div class="aqi-details">
+                  <div class="aqi-detail">
+                    <span class="detail-name">PM2.5</span>
+                    <span class="detail-value">--</span>
+                  </div>
+                  <div class="aqi-detail">
+                    <span class="detail-name">PM10</span>
+                    <span class="detail-value">--</span>
+                  </div>
+                  <div class="aqi-detail">
+                    <span class="detail-name">O3</span>
+                    <span class="detail-value">--</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Sunrise/Sunset Card -->
+            <div class="data-card sun-card">
+              <div class="card-header">
+                <i class="fas fa-sun"></i>
+                <h3>Sun & Moon</h3>
+              </div>
+              <div class="card-content">
+                <div class="sun-times">
+                  <div class="sun-time">
+                    <i class="fas fa-sunrise"></i>
+                    <span class="time-label">Sunrise</span>
+                    <span class="time-value sunrise">--:--</span>
+                  </div>
+                  <div class="sun-time">
+                    <i class="fas fa-sunset"></i>
+                    <span class="time-label">Sunset</span>
+                    <span class="time-value sunset">--:--</span>
+                  </div>
+                </div>
+                <div class="moon-phase">
+                  <div class="moon-icon">
+                    <i class="fas fa-moon"></i>
+                  </div>
+                  <div class="moon-info">
+                    <span class="moon-phase-text">--</span>
+                    <span class="moon-illumination">--% illuminated</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Visibility Card -->
+            <div class="data-card visibility-card">
+              <div class="card-header">
+                <i class="fas fa-eye"></i>
+                <h3>Visibility</h3>
+              </div>
+              <div class="card-content">
+                <div class="visibility-value">--</div>
+                <div class="visibility-description">--</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 7-Day Forecast Section -->
+        <section class="daily-forecast">
+          <h2 class="section-title">7-Day Forecast</h2>
+          <div class="daily-container"></div>
+        </section>
+      </main>
+
+      <!-- Favorites Bar -->
+      <div class="favorites-bar">
+        <div class="favorites-header">
+          <i class="fas fa-star"></i>
+          <span>Favorites</span>
+        </div>
+        <div class="favorites-list"></div>
+      </div>
+
+      <!-- Weather Alert -->
+      <div class="weather-alert">
+        <div class="alert-content">
+          <i class="fas fa-exclamation-triangle"></i>
+          <span class="alert-message"></span>
+          <button class="alert-close">&times;</button>
+        </div>
+      </div>
+
+      <!-- Error Modal -->
+      <div class="error-modal">
+        <div class="modal-content">
+          <div class="modal-icon">⚠️</div>
+          <h2 class="modal-title">Location Not Found</h2>
+          <p class="modal-message">
+            We couldn't find the location you searched for. Please try another
+            city or check your spelling.
+          </p>
+          <button class="modal-btn">Try Again</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
